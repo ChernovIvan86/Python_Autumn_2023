@@ -5,9 +5,10 @@
 # Вввод:122330.
 # Вывод: 0 - 1, 1 - 1, 2 - 2, 3 - 2, 4 - 0 ...
 
-from random import randint
+#from random import randint
 
-n = randint(1e6, 9e6)
+#n = randint(1e6, 9e6)
+n = int(input('Введите целое число: '))
 dct = {}
 n_st=str(n)
 print(n_st)
@@ -20,8 +21,7 @@ for i in n_st:
         dct[int(i)]+=1
 
 for k, v in dct.items():
-    if dct[k] !=0 :
-        print(f'{k} - {dct[k]}')
+    print(f'{k} - {dct[k]}')
 
 
 
