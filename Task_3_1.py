@@ -3,16 +3,24 @@
 # Окончание ввода - ввод 0.
 # После чего напечатать среднюю зарплату
 
-from random import randint
+#from random import randint
 
-n = randint(0, 100)
-tes={n}
-worker=1
+dct = dict()
+n=1
+worker = 1
 
-while n != 0:
-    n = randint(0, 100)
-#    print(n)
-    worker += 1
-    tes.add(n)
+while worker != '0' or n != 0:
+    worker = input('Введите ФИО сотрудника: ')
+    if worker == '0': break
+    n = int(input('Введите ЕГО зарплату: '))
+    if n == 0: break
 
-print(sum(tes)/worker)
+    if worker in dct.keys():
+        dct[worker] += n
+    else:
+        dct[worker] = n
+
+print(dct)
+print(f'Всего работников: {len(dct)}')
+print(f'Всего выплачено ЗП: {sum(dct.values())}')
+print(f'средняя ЗП: {sum(dct.values())/len(dct)}')
