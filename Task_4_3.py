@@ -4,7 +4,7 @@
 ## (т.е. имеют одинаковый набор букв).
 ##
 st_1 = 'jujy hshhshs; l, s56354mkgerk; 543mgd'.lower()
-st_2 = 'jUjy hshhshs; l, s56354mkgerk; 543mgd'.lower()
+st_2 = 'aUjy hshhshs; l, s56354mkgerk; 543mgd'.lower()
 d_1 = dict()
 d_2 = dict()
 for i in range(0, len(st_1)-1):
