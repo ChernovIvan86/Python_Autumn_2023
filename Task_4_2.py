@@ -1,3 +1,12 @@
+## Task_4_2
+# Ввод: натуральное число n/
+# Вывод: спираль из чисел от 1 до n
+# Например: n = 4:
+#  1  2  3  4
+#  12 13 14 5
+#  11 16 15 6
+#  10  9  8 7
+#
 
 import math
 #n = int(input('Введите n >= 2: '))
@@ -13,7 +22,7 @@ while count != n:
     lst_0.append([])
     count += 1
 
-# создание списка lst из неглубоких копий спискаспискоа lst_0
+# создание списка lst из неглубоких копий списка lst_0
 count = 0
 while count != n:
     lst.append(lst_0.copy())
@@ -21,29 +30,13 @@ while count != n:
 
 ## вычисление необходимого числа шагов
 # для заполнения массива размерностью n*n
-sum_steps = n * 2 - 1
+sum_steps = n ** 2
 print(sum_steps)
 
+'''
 ## первый шаг заполнения спирали
 for i in range(0, n):
     lst[0][i] = i+1
-
-akt_steps = n + 1
-a = 0
-while akt_steps != sum_steps:
-
-    for i in range(1, n):
-
-        lst[i][n - 1] = akt_steps
-        akt_steps += 1
-
-
-    a += (math.pi / 2)
-
-
-
-    if akt_steps != sum_steps: break
-'''
 print(f'cos(0) = {round(math.cos(0))}')
 print(f'cos(pi/2) = {round(math.cos(math.pi / 2))}')
 print(f'cos(pi) = {round(math.cos(math.pi))}')
@@ -62,12 +55,13 @@ while True:
     input()
 '''
 
+for i in range(0, n - 1):
+    if i < n:
+        for j in range(0, len(lst[i])):
+            lst[i][j] = j + 1
+
+
+
 
 for i in lst:
     print(i)
-
-
-dct = dict()
-for i in range(n+1, n*n+1):
-    dct[i] = (0, 0)
-print(dct)
