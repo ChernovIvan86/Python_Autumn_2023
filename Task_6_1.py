@@ -11,18 +11,19 @@ st_1917='MCMXVII'
 st_1961='MCMLXI'
 st_2000='MM'
 st_1862='MDCCCLXII'
+st_4 = 'IV'
 def ex_rome_in_arab(st):            #объявляем функцию "ex_rome_in_arab" с её аргументом "st"
     lst = list(st)
 
     dct = {'I':1, 'V':5, 'X':10, 'L':50, 'C':100, 'D':500, 'M':1000}
-    for i in range(0, len(lst) - 1):
-        if i == len(lst) - 1: break  # выход из цикла при условии, что сравнивать не с чем
-        if dct[lst[i]] < dct[lst[i + 1]]:
-            lst[i] = dct[lst[i + 1]] - dct[lst[i]]
+    for i in range(0, len(lst)):
+        lst[i] = int(dct[lst[i]])
+    print(lst)
+    for i in range(0, len(lst)):
+        if lst[i] < lst[i+1]:
+            lst[i] = lst[i + 1] - lst[i]
             lst.pop(i + 1)
-        else:
-            lst[i] = dct[lst[i]]
-    lst[-1] = dct[lst[-1]]
+        if i >= len(lst) - 2: break  # выход из цикла при условии, что сравнивать не с чем
     return sum(lst)
 
 st = st_1961                       #задаём значение аргумента "st" для функции "ex_rome_in_arab"

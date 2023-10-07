@@ -29,3 +29,10 @@ n, m = 2, 3
 x = [[1, 6, 3], [4, 5, 4]]
 
 sor_3(x, m)
+
+# Контрольный вариант Task_7_3
+lst = [[1,2,3,4], [1,3]]
+cmn = []
+for i in lst:
+    cmn.extend(i)
+print(sorted(cmn)[-3:])
