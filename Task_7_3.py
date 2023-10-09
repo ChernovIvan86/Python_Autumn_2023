@@ -11,13 +11,12 @@
 
 def sor_3(x,m):
 
-    tes = set()
+    lst = []
 
     for i in range(0, len(x)):
         for j in range(0, m):
-            tes.add(x[i][j])
+            lst.append(x[i][j])
 
-    lst = list(tes)
     lst.sort(reverse=True)
 
     lst_max_3 = []
@@ -31,7 +30,7 @@ x = [[1, 6, 3], [4, 5, 4]]
 sor_3(x, m)
 
 # Контрольный вариант Task_7_3
-lst = [[1,2,3,4], [1,3]]
+lst = [[1, 6, 3], [4, 5, 4]]
 cmn = []
 for i in lst:
     cmn.extend(i)
