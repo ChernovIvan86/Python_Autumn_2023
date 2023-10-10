@@ -5,15 +5,16 @@
 # 2. Отсортировать по убыванию и напечатать первые 10 символов и их частоты.
      # При равенстве частот отсортировать символы по алфавиту.
 
-x='Adfgj;lg vdfdnd'
+x='fdsafdsalkjgcvwqtipml'
 from collections import Counter
 
 cont = dict(Counter(x.lower()))
 #print(cont.items())
-s=sorted(cont.items(), key=lambda x: (x[1],x[0]))
+s=sorted(cont.items(), key=lambda x: (-x[1],x[0]))
 print('s = ', s)
 
 for i in s:
+    if s.index(i) >= 10: break
     print(f"'{i[0]}' - {i[1]}")
 ###########################################
 ###### С помощью словаря и функции get ####
