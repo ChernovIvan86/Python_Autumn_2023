@@ -5,14 +5,12 @@
 # общего количества цифр в каждом списочке.
 # Каждый списочек отсортируйте по убыванию.
 
-lst = [[1,5,3], [2,44,1, 4], [3,3]]
+lst = [[1,5,3], [2,44,1, 4], [3,3], [333333333333333333, 3]]
 
-lst_1 = sorted(lst, key = lambda x: len(x))
+print(  [len(''.join(map(str,i))) for i in lst]  )
+
+lst_1 = sorted(  lst, key = lambda x: len(''.join(map(str,x)))  )
 for i in lst_1:
      i.sort(reverse = True)
 print(lst_1)
 
-
-# lst = [[1,5,3], [2,44,1, 4], [3,3]]
-# lst_1 = list(map(reversed, lst))
-# print(lst_1)
