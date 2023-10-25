@@ -3,13 +3,20 @@
 Создайте функцию-генератор, которая создаёт бесконечную последовательность:
 1,-2,3,-4,... .
 '''
-### через генератор списков (списковое включение) 'List comprehension'
-def list_comp(n):
-    x = ([i * (-1) if i % 2 == 0 else i for i in range(1, n + 1)])
-    for i in x:
-        print(f'{i},', end='')
+### работа над ошибками
+## Надо создать генератор создающий БЕСКОНЕЧНУЮ
+# последовательность чисел, а не n чисел.
+#Т.е. генератор не может принимать параметр n.
+def gen_r():
+    n = 0
+    while True:
+        n += 1
+        yield -n if n% 2 == 0 else n
+
+res = gen_r()
 n = 12
-list_comp(n)
+for i in range(n):
+    print(next(res), end= ',')
 
 ### через генератор с 'yield'
 ## 'yield' - ключевое слово, используется для возврата из функции
@@ -24,8 +31,14 @@ def gen(n):
             yield i * (-1)
         else:
             yield i
-
+n = 12
 for i in list(gen(n)):
     print(f'{i},', end='')
 
-
+### через "генератор" списков (списковое включение) 'List comprehension'
+def list_comp(n):
+    x = ([i * (-1) if i % 2 == 0 else i for i in range(1, n + 1)])
+    for i in x:
+        print(f'{i},', end='')
+n = 12
+list_comp(n)
