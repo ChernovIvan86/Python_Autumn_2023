@@ -6,8 +6,8 @@ sort, sorted, max, min и т.д.
 '''
 
 lst = [2, 5, 3, 3, 1]
-lst = [1, 2, 3, 4, 5]
-def sort_lst(list):
+lst = [2, 5, 3, 3, 1, 0, 5, 6, 7, 8]
+def sort_lst(lst):
     """
     :param list:
     :return: sorted list
@@ -20,7 +20,7 @@ def sort_lst(list):
                 lst[i + 1], lst[i] = lst[i], lst[i + 1]
             else:
                 halyava += 1
-                if halyava >= 4:
+                if halyava >= len(lst) - 1:
                     return lst
         count += 1
         if count >= len(lst):
