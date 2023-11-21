@@ -15,11 +15,12 @@ n = 4
 n = 18
 centr = int(math.ceil(n/2))
 print(centr)
-
+# создание массива шаг "1"
 lst = []
 for i in range(n):
     lst.append([])
 
+# создание массива шаг "2", и заполнение всего массива "1"
 for i in range(n):
     for j in range(n):
         lst[i].append(1)
@@ -29,7 +30,7 @@ while True:
     if count == centr:
         break
 
-    # заполнение "2"
+    # заполнение "2 - n"
     for i in range(0 + count, n - count):
         for j in range(0 + count, n - count):
             lst[i][j] = count + 1
